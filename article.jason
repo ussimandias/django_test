@@ -1,0 +1,66 @@
+[
+{
+    "pk": 1, 
+    "model": "article.article", 
+    "fields": {
+        "body": "Our sources listed the cars bought for the minister as two \u201cAmerican Spec Lexus Limousines.\u201d As happened in the NCAA deal, reliable sources at FAAN told SaharaReporters that the vehicles were never physically delivered to FAAN. Instead, some of our sources disclosed that the automobile vendor gave the minister over N150 million as kickbacks after First Bank of Nigeria had paid for the vehicle.\r\n\r\nA FAAN source said the deal was done with Coscharis Motors Limited, a company owned by Cosmos Maduka. Mr. Maduka\u2019s dealership was also involved in the fraudulent deal in which NCAA spent $1.6 million on the ostensible purchase of two bullet-proof BMW cars.", 
+        "thumbnail": "", 
+        "pub_date": "2013-10-30T21:49:45Z", 
+        "likes": 3, 
+        "title": "test 1"
+    }
+},
+{
+    "pk": 2, 
+    "model": "article.article", 
+    "fields": {
+        "body": "Several sources at FAAN and First Bank told SaharaReporters that George Uriesi, the Managing Director of FAAN, conspired with Ms. Oduah to obtain a loan of N1.3 billion from First Bank. Part of the loan was used to buy 205 cars for several staff members, directors as well as board members of FAAN.", 
+        "thumbnail": "", 
+        "pub_date": "2013-10-30T21:52:19Z", 
+        "likes": 1, 
+        "title": "test 2"
+    }
+},
+{
+    "pk": 3, 
+    "model": "article.article", 
+    "fields": {
+        "body": "An ongoing investigation by SaharaReporters has revealed how Aviation Minister Stella Oduah compelled the Federal Airports Authority of Nigeria (FAAN), a cash-strapped agency under her supervision, to borrow a huge amount from a commercial bank in order to buy her two bullet-proof cars. ", 
+        "thumbnail": "", 
+        "pub_date": "2013-10-30T21:53:43Z", 
+        "likes": 7, 
+        "title": "test 3"
+    }
+},
+{
+    "pk": 4, 
+    "model": "article.article", 
+    "fields": {
+        "body": "In an appearance before a panel of the House of Representatives investigating Ms. Oduah\u2019s car scams, Mr. Maduka testified that he fraudulently used import waivers meant for Lagos State to import two armored cars for the minister. Yesterday, the committee of the House of Representatives revealed that two armored cars hurriedly brought to Abuja airport for inspection had chassis numbers that did not match those in the transaction between Coscharis and the NCAA.\r\n", 
+        "thumbnail": "", 
+        "pub_date": "2013-11-01T04:00:00Z", 
+        "likes": 7, 
+        "title": "test4"
+    }
+},
+{
+    "pk": 1, 
+    "model": "article.comment", 
+    "fields": {
+        "body": "Nigeria's National Assembly has no reputation for parliamentary competency or any institutional reputation for honesty. Only a fool will expect Nigeria's National Assembly to suddenly become tough on crimes or come down hard on the causes of crimes.\r\n\r\nreply", 
+        "article": 1, 
+        "pub_date": "2013-11-01T07:43:33.351Z", 
+        "name": "Bimpe Adaramaja "
+    }
+},
+{
+    "pk": 2, 
+    "model": "article.comment", 
+    "fields": {
+        "body": "Honestly, Nigeria needs serious prayer to get out of this mess, banks are making things worse, they don't lend money to the productive sector of the economy. Nobody seems love this country any longer. May God deliver Nigeria from total calamity. We should all be encouraged to continually praying for Nigeria to survive the current massive looting.\r\n", 
+        "article": 2, 
+        "pub_date": "2013-11-01T07:47:15.701Z", 
+        "name": " Aboki"
+    }
+}
+]

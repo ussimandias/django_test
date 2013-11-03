@@ -1,21 +1,24 @@
 # Django settings for django_test project.
-import os
-import dj_database_url
 
-PROJECT_DIRECTORY = os.getcwd()
-
-DEBUG = False
-#TEMPLATE_DEBUG = DEBUG
-#TEMPLATE_DEBUG = True
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-     ('Usman Tarfa', 'utarfa@gmail.com'),
+    # ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '/home/uss/Desktop/myWebDev/django-uss/django_test/storage.db',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -47,7 +50,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = '/assets/'
+MEDIA_ROOT = '/home/uss/Desktop/myWebDev/django-uss/django_test/static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -58,7 +61,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_DIRECTORY,'static/')
+STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -66,7 +69,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    ('assets', os.path.join(os.getcwd(),'static/')),
+    ('assets', '/home/uss/Desktop/myWebDev/django-uss/django_test/static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -106,9 +109,8 @@ ROOT_URLCONF = 'django_test.urls'
 WSGI_APPLICATION = 'django_test.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIRECTORY,'templates/'),
-    os.path.join(PROJECT_DIRECTORY,'article/templates'),
-    os.path.join(PROJECT_DIRECTORY,'userprofile/templates'),
+    '/home/uss/Desktop/myWebDev/django-uss/django_test/templates',
+    '/home/uss/Desktop/myWebDev/django-uss/django_test/article/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -128,7 +130,6 @@ INSTALLED_APPS = (
      'article',
      'south',
      'userprofile',
-     'storages',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -141,6 +142,11 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
@@ -158,21 +164,3 @@ LOGGING = {
 }
 
 AUTH_PROFILE_MODULE = 'userprofile.UserProfile'
-
-UPLOAD_FILE_PATTERN = "assets/uploaded_files/%s_%s"
-
-try:
-    from local_settings import *
-except Exception as e:
-    print e.message
-
-AWS_STORAGE_BUCKET_NAME = os.environ['django_tests']
-AWS_ACCESS_KEY_ID = os.environ['AKIAIBVBUPGPJFTJAORQ']
-AWS_SECRET_ACCESS_KEY = os.environ['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']
-AWS_PRELOAD_METADATA = True
-    
-if not DEBUG:
-    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    S3_URL = 'http://%s.s3.amazonaws.com/assets/' % AWS_STORAGE_BUCKET_NAME
-    STATIC_URL = S3_URL

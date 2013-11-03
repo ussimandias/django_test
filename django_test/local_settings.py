@@ -3,7 +3,7 @@ import dj_database_url
 from settings import PROJECT_DIRECTORY
 import os
 
-DEBUG = True
+DEBUG = False
 #TEMPLATE_DEBUG = DEBUG
 TEMPLATE_DEBUG = True
 
@@ -47,7 +47,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.path.join(PROJECT_DIRETORY, 'static/')
+MEDIA_ROOT = os.path.join(PROJECT_DIRECTORY, 'static/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.

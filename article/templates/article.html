@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block sidebar %}
 <ul>
@@ -11,7 +12,8 @@
 <h1>{{ article.title }}</h1>
 <p>{{ article.body }}</p>
 {% if article.thumbnail %}
-<p><img src="/static/assets/{{article.thumbnail}}" width="200"/></p>
+<!-- <p><img src="/static/assets/{{article.thumbnail}}" width="200"/></p> -->
+<p><img src="{% get_static_prefix %}{{article.get_thumbnail}}" width="200"/></p>
 {% endif %}
 <p>{{ article.likes }} people liked this article</p>
 <p><a href="/articles/like/{{article.id}}">Like</a></p>
